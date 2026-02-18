@@ -30,27 +30,31 @@ void ft_toLower(std::string &s)
 
 int main()
 {
-	int len = 5;
-	int arr_int[len] = {2, 4, 6, 8, 10};
-	double arr_d[len] = {1.1, 2.2, 3.3, 4.4, 5.5};
-	std::string arr_str[len] = {"a", "bb", "ccc", "dddd", "eeeee"};
+	int arr_int[] = {2, 4, 6, 8, 10};
+	double arr_d[] = {1.1, 2.2, 3.3, 4.4, 5.5};
+	std::string arr_str[] = {"a", "bb", "ccc", "dddd", "eeeee"};
+
+	size_t len_int = sizeof(arr_int) / sizeof(arr_int[0]);
+	size_t len_d   = sizeof(arr_d) / sizeof(arr_d[0]);
+	size_t len_str = sizeof(arr_str) / sizeof(arr_str[0]);
+
 
 	std::cout << "ints:\n";
-	::iter(arr_int, len, printElem);
+	::iter(arr_int, len_int, printElem);
 
 	std::cout << "\ndoubles:\n";
-	::iter(arr_d, len, printElem);
+	::iter(arr_d, len_d, printElem);
 
 	std::cout << "\nstrings original:\n";
-	::iter(arr_str, len, printElem);
+	::iter(arr_str, len_str, printElem);
 
-	::iter(arr_str, len, ft_toUpper);
+	::iter(arr_str, len_str, ft_toUpper);
 	std::cout << "strings upper:\n";
-	::iter(arr_str, len, printElem);
+	::iter(arr_str, len_str, printElem);
 
-	::iter(arr_str, len, ft_toLower);
+	::iter(arr_str, len_str, ft_toLower);
 	std::cout << "strings lower:\n";
-	::iter(arr_str, len, printElem);
+	::iter(arr_str, len_str, printElem);
 
 	return 0;
 }
