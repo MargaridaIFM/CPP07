@@ -7,6 +7,8 @@
 #include <ctime>
 #include <cstdlib>
 #include <string>
+#include <exception>
+#include <stdexcept>
 
 template<typename T>
 class Array
@@ -23,8 +25,8 @@ class Array
         ~Array();
 
         T &operator[](unsigned int n);
-        unsigned int getSize();
-    
+        const T &operator[](unsigned int n) const;
+        unsigned int getSize() const;
 };
 
 #include "Array.tpp"
